@@ -18,7 +18,7 @@
       top: 0%;
       text-align: center;
       padding: 1.5rem;
-      max-width: 310px;
+      max-width: 350px;
       background: #006aa7;
       color: #fff;
     }
@@ -33,11 +33,17 @@
       display: none;
     }
 
+    dialog p {
+      font-size: 20px;
+      padding-bottom: 2rem;
+    }
+
     .dialog-btn {
-      background: #fff;
+      background: transparent;
       padding: 0.5rem;
       border: 0;
-      color: black;
+      color: #fff;
+      font-weight: semi-bold;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 16px;
       position: absolute;
@@ -52,15 +58,25 @@
     .unset {
       display: block;
     }
+
+    .modal-link {
+      color: rgb(29, 29, 29);
+      text-decoration: underline;
+      background: white;
+      padding: 0.75rem;
+      border-radius: 4px;
+      font-size: 20px;
+      font-weight: bold;
+    }
   </style>
   <body>
     <dialog class="modal">
-      <p style="font-size: 20px">
+      <p>
         On February 2, 2023, Mutual Savings Credit Union upgraded both the home
         and mobile banking platforms.
       </p>
       <a
-        style="color: #fff; text-decoration: underline"
+        class="modal-link"
         href="https://www.mutualsavingscu.org/assets/framework/pages/new-home-banking.php"
         >Click Here For Login Instructions</a
       >
@@ -108,7 +124,7 @@
             subtractMilliSecondsValue = timeFilter - currentTime;
           setTimeout(timeForBanner, subtractMilliSecondsValue);
         },
-        false,
+        false
       );
       //   modal.classList.remove("hidden");
     </script>
