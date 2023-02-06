@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    dialog {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+      display: block;
+      position: fixed;
+      top: 0%;
+      text-align: center;
+      padding: 1.5rem;
+      max-width: 310px;
+      background: #006aa7;
+      color: #fff;
+    }
+    dialog::backdrop {
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(3px);
+    }
+    dialog:not([open]) {
+      display: none;
+    }
+    dialog::backdrop:not([open]) {
+      display: none;
+    }
+
+    .dialog-btn {
+      background: #fff;
+      padding: 0.5rem;
+      border: 0;
+      color: black;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .unset {
+      display: block;
+    }
+  </style>
+  <body>
+    <dialog class="modal">
+      <p style="font-size: 20px">
+        On February 2, 2023, Mutual Savings Credit Union upgraded both the home
+        and mobile banking platforms.
+      </p>
+      <a
+        style="color: #fff; text-decoration: underline"
+        href="https://www.mutualsavingscu.org/assets/framework/pages/new-home-banking.php"
+        >Click Here For Login Instructions</a
+      >
+
+      <button class="dialog-btn close-button">X</button>
+    </dialog>
+
+    <h1>sdasda</h1>
+    <p>aksjdalksjdlajs</p>
+
+    <!-- <dialog class="modal" style="display: grid; row-gap: 1rem">
+      <div style="font-size: 20px; padding-bottom: 0.5rem">
+        On February 2, 2023, Mutual Savings Credit Union upgraded both the home
+        and mobile banking platforms.
+      </div>
+      <a
+        style="color: #fff"
+        href="https://www.mutualsavingscu.org/assets/framework/pages/new-home-banking.php"
+        >Click Here For Login Instructions</a
+      >
+
+      <div class="close-button"><button class="dialog-btn">X</button></div>
+    </dialog> -->
+
+    <script>
+      const modal = document.querySelector(".modal");
+      const closeModal = document.querySelector(".close-button");
+
+      closeModal.addEventListener("click", () => {
+        modal.close();
+      });
+
+      document.addEventListener(
+        "DOMContentLoaded",
+        function () {
+          function timeForBanner() {
+            // modal.classList.add("unset");
+            window.addEventListener("load", (event) => {
+              modal.showModal();
+            });
+          }
+
+          const timeFilter = new Date("February 2, 2023 08:00:00 AM").getTime(),
+            currentTime = new Date().getTime(),
+            subtractMilliSecondsValue = timeFilter - currentTime;
+          setTimeout(timeForBanner, subtractMilliSecondsValue);
+        },
+        false,
+      );
+      //   modal.classList.remove("hidden");
+    </script>
+  </body>
+</html>
